@@ -102,7 +102,7 @@ lumi neve
 tuuli vento
 myrsky tempesta
 kirja libro
-lehti rivista
 sanomalehti giornale
 kynä penna
 paperi carta
+

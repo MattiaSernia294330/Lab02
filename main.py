@@ -1,29 +1,27 @@
 import translator as tr
 
 t = tr.Translator()
+continua=True
 t.loadDictionary("dictionary.txt")
-scelta=t.printMenu()
-while scelta!=5:
-    if scelta==1:
-        stringa=input("okay, quale parola devo aggiungere?\n")
-        lista=stringa.split(" ")
-        parte_due=''
-        for i in range(1, len(lista)):
-            parte_due+=f" {lista[i]}"
-        tupla=[lista[0], parte_due.lstrip(" ")]
-        t.handleAdd(tupla)
-    elif scelta==2:
-        stringa=input("okay, che parola devo tradurre?\n")
-        print(f'{t.handleTranslate(stringa)}')
-    elif scelta==3:
-        risposta=t.handleWildCard(input("okay, che parola devo tradurre?\n"))
-        if risposta=="":
-            risposta="sei un coglione, non trovo nessuna parola"
-        print(risposta)
+while continua==True:
 
-    else:
-        print("scegli una delle 5 opzioni")
-    scelta=t.printMenu()
+    t.printMenu()
 
+    testo = input(f"scegli un opzione:\n{t.printMenu()}\n")
+
+    # Add input control here!
+
+    if int(testo) == 1:
+        print("okay, che parola devo aggiungere?")
+        parole = input()
+        t.handleAdd(parole)
+    if int(testo) == 2:
+        traduzione=input("okay, che parola devo cercare?\n")
+        print(t.handleTranslate(traduzione))
+    if int(testo) == 3:
+        traduzione=input("okay, che parola con ? devo cercare\n")
+        print(t.handleWildCard(traduzione))
+    if int(testo) == 4:
+        continua=False
 
 

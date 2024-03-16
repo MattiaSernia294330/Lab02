@@ -105,4 +105,3 @@ kirja libro
 sanomalehti giornale
 kynä penna
 paperi carta
-
